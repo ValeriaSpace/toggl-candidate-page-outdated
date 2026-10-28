@@ -536,15 +536,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </span><span class="slot-label"><b>Your desk today</b><span class="tag-col">Collecting</span></span></div>
           <div class="stats2">
             <div class="stat lime guess" id="guess">
-              <span class="g-q">Guess the number: a fun Toggl fact goes here</span>
-              <input type="range" id="guess-range" min="0" max="250" value="60" aria-label="Your guess">
-              <span class="g-row"><output id="guess-out" for="guess-range">60</output><button type="button" id="guess-btn">Guess</button></span>
+              <span class="g-q">How many hours have Togglers tracked on health challenges in 2026?</span>
+              <input type="range" id="guess-range" min="0" max="2000" step="10" value="300" aria-label="Your guess in hours">
+              <span class="g-row"><output id="guess-out" for="guess-range">300</output><button type="button" id="guess-btn">Guess</button></span>
             </div>
           </div>
           <div class="photo slot" style="width:63%;aspect-ratio:800/512"><span class="slot-label"><b>Your pet on a call</b><span class="tag-col">Collecting</span></span></div>
         </div>
       </div>
-      <p class="draft-note" style="justify-content:center"><span class="tag-col">Collecting</span> Fresh counts, a fun number and new photos. Each grey box says which photo to ask for.</p>
+      <p class="draft-note" style="justify-content:center"><span class="tag-col">Collecting</span> Fresh counts and new photos. Each grey box says which photo to ask for.</p>
     </div>
   </section>
 
@@ -791,7 +791,9 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   var gr = document.getElementById('guess-range'), go = document.getElementById('guess-out'), gb = document.getElementById('guess-btn'), gBox = document.getElementById('guess');
   gr.addEventListener('input', function () { go.textContent = gr.value; });
   gb.addEventListener('click', function () {
-    gBox.innerHTML = '<b>?</b><span>The real number goes here</span><span class="g-res">You guessed ' + gr.value + '.</span><span class="tag-col" style="justify-self:start">Collecting</span>';
+    var real = 821, g = +gr.value, d = Math.abs(real - g);
+    var verdict = d <= 50 ? 'Spot on. Are you secretly a Toggler?' : (g < real ? 'More. We take our step counts seriously.' : 'Fewer, but we love the ambition.');
+    gBox.innerHTML = '<b>821 h</b><span>tracked on health challenges in 2026 so far, by 44 Togglers</span><span class="g-res">You guessed ' + g + ' h. ' + verdict + '</span>';
   });
 
 
