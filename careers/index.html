@@ -51,7 +51,6 @@ section { padding-block: clamp(64px, 9vw, 120px); }
 .tag-new { background: var(--pink); color: var(--deep); }
 .tag-col { background: var(--lime-2); color: var(--olive); }
 h2 .tag-new, h2 .tag-col { margin-left: 12px; position: relative; top: -4px; }
-.draft-note { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; font-size: 14px; color: var(--muted); }
 
 /* Top banner + nav */
 .banner { background: var(--deep); color: var(--white); }
@@ -287,25 +286,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 @media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
 
 /* Wall */
-.chipset { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-.chipset button { border: 1px solid var(--line-2); background: var(--white); font: 500 14px var(--font); color: var(--ink); padding: 8px 16px; border-radius: 400px; cursor: pointer; }
-.chipset button.on { background: var(--deep); border-color: var(--deep); color: var(--white); }
-.notes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
-@media (max-width: 960px) { .notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 520px) { .notes { grid-template-columns: 1fr; } }
-.note-card { margin: 0; border-radius: 6px; padding: 20px 20px 18px; display: grid; gap: 14px; align-content: space-between; min-height: 170px; transition: transform 200ms; }
-.note-card:nth-child(odd) { transform: rotate(-1deg); }
-.note-card:nth-child(even) { transform: rotate(0.8deg); }
-.note-card:hover { transform: rotate(0) translateY(-3px); }
-.note-card.c1 { background: var(--lime-2); }
-.note-card.c2 { background: var(--lilac); }
-.note-card.c3 { background: var(--lime-3); }
-.note-card.c4 { background: var(--pink-2); }
-.note-card blockquote { margin: 0; font-size: 18px; line-height: 1.4; color: var(--ink); font-weight: 500; }
-.note-card figcaption { font-size: 13px; color: var(--muted); }
-.note-card .ex { justify-self: start; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border: 1px dashed var(--line-2); border-radius: 400px; padding: 2px 8px; background: rgba(255, 255, 255, 0.5); }
-.note-card[hidden] { display: none !important; }
-@media (prefers-reduced-motion: reduce) { .note-card, .note-card:nth-child(odd), .note-card:nth-child(even) { transform: none; transition: none; } }
 
 /* Quiz */
 .quiz-box { background: var(--surface-2); border-radius: 12px; padding: clamp(24px, 4vw, 48px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(24px, 5vw, 64px); align-items: start; }
@@ -594,35 +574,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   })();
   </script>
 
-  <section class="wall" style="padding-top:0" aria-labelledby="wall-h">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <h2 id="wall-h" class="h-sec">Finish the sentence <span class="tag-new">New</span></h2>
-          <p class="sub">One-liners from Togglers. Tap a prompt to filter.</p>
-        </div>
-      </div>
-      <div class="chipset" id="wall-chips">
-        <button type="button" class="on" data-p="all">All</button>
-        <button type="button" data-p="commute">My commute is…</button>
-        <button type="button" data-p="raft">RAFT means I can…</button>
-        <button type="button" data-p="stay">I knew I'd stay when…</button>
-        <button type="button" data-p="meetup">Best meetup moment…</button>
-      </div>
-      <div class="notes" id="wall-notes">
-        <figure class="note-card c1" data-p="commute"><span class="ex">Example</span><blockquote>“…twelve steps and one cat sitting on the keyboard.”</blockquote><figcaption>Name · Team</figcaption></figure>
-        <figure class="note-card c2" data-p="raft"><span class="ex">Example</span><blockquote>“…pick my kids up from school and still ship on time.”</blockquote><figcaption>Name · Team</figcaption></figure>
-        <figure class="note-card c3" data-p="stay"><span class="ex">Example</span><blockquote>“…my first idea got shipped in my second month.”</blockquote><figcaption>Name · Team</figcaption></figure>
-        <figure class="note-card c4" data-p="meetup"><span class="ex">Example</span><blockquote>“…karaoke with people I'd only seen as tiny video squares.”</blockquote><figcaption>Name · Team</figcaption></figure>
-        <figure class="note-card c2" data-p="commute"><span class="ex">Example</span><blockquote>“…whichever café has the best Wi-Fi this week.”</blockquote><figcaption>Name · Team</figcaption></figure>
-        <figure class="note-card c1" data-p="raft"><span class="ex">Example</span><blockquote>“…go surfing when the waves are good and work when they're not.”</blockquote><figcaption>Name · Team</figcaption></figure>
-        <figure class="note-card c4" data-p="stay"><span class="ex">Example</span><blockquote>“…someone two levels above me said ‘you decide’.”</blockquote><figcaption>Name · Team</figcaption></figure>
-        <figure class="note-card c3" data-p="meetup"><span class="ex">Example</span><blockquote>“…losing the hackathon spectacularly, as a team.”</blockquote><figcaption>Name · Team</figcaption></figure>
-      </div>
-      <p class="draft-note"><span class="tag-col">Collecting</span> Example answers. Real ones come from one Slack post: pick a prompt, finish it in one line.</p>
-    </div>
-  </section>
-
   <section class="quiz" style="padding-top:0" aria-labelledby="quiz-h">
     <div class="wrap">
       <div class="quiz-box">
@@ -889,14 +840,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     });
   });
   render('eng');
-
-  // Wall filter
-  document.querySelectorAll('#wall-chips button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      document.querySelectorAll('#wall-chips button').forEach(function (x) { x.classList.toggle('on', x === b); });
-      document.querySelectorAll('#wall-notes .note-card').forEach(function (n) { n.hidden = !(b.dataset.p === 'all' || n.dataset.p === b.dataset.p); });
-    });
-  });
 
   // Quiz
   var Q = [
