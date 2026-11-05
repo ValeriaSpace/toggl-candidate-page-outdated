@@ -752,12 +752,13 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   var P = {
     deep: ['Deep work', 'rgb(139, 41, 155)'], meet: ['Meetings', 'rgb(236, 132, 255)'], sup: ['Customer chats', 'rgb(206, 222, 113)'],
     learn: ['Learning', 'rgb(66, 74, 18)'], social: ['Coffee chats', 'rgb(238, 173, 251)'], review: ['Code review', 'rgb(78, 14, 88)'],
-    content: ['Writing & content', 'rgb(139, 41, 155)'], camp: ['Campaigns', 'rgb(206, 222, 113)']
+    content: ['Writing & content', 'rgb(139, 41, 155)'], camp: ['Campaigns', 'rgb(206, 222, 113)'],
+    invest: ['Triage', 'rgb(139, 41, 155)'], kb: ['Docs', 'rgb(78, 14, 88)'], research: ['Research', 'rgb(78, 14, 88)']
   };
   var W = {
-    eng: { Mon: { deep: 4.5, meet: 1, review: 1.5, social: 0.5 }, Tue: { deep: 5.5, review: 1, social: 0.5 }, Wed: { deep: 3, meet: 2, review: 1.5, learn: 1 }, Thu: { deep: 6, review: 1 }, Fri: { deep: 3, learn: 2, social: 1 } },
-    sup: { Mon: { sup: 5, meet: 1, social: 0.5 }, Tue: { sup: 5.5, learn: 1 }, Wed: { sup: 4.5, meet: 1.5, social: 1 }, Thu: { sup: 6, learn: 0.5 }, Fri: { sup: 4, learn: 1.5, social: 1 } },
-    mkt: { Mon: { content: 3, meet: 2, camp: 2 }, Tue: { content: 4.5, camp: 2 }, Wed: { meet: 2.5, camp: 3, social: 1 }, Thu: { content: 5, learn: 1.5 }, Fri: { camp: 2.5, learn: 2, social: 1 } }
+    eng: { Mon: { deep: 4, meet: 2, review: 1, social: 0.5 }, Tue: { deep: 5.5, review: 1.5, social: 0.5 }, Wed: { deep: 3.5, meet: 1.5, review: 1, learn: 1.5 }, Thu: { deep: 6, review: 1, meet: 0.5 }, Fri: { deep: 3.5, review: 1, meet: 1, learn: 1.5, social: 0.5 } },
+    sup: { Mon: { sup: 4.5, meet: 1.5, invest: 1, kb: 0.5 }, Tue: { sup: 5, invest: 1.5, kb: 1 }, Wed: { sup: 4, meet: 1, kb: 1.5, learn: 1 }, Thu: { sup: 5, invest: 1.5, meet: 1 }, Fri: { sup: 4, invest: 1, kb: 1, meet: 0.5, learn: 1 } },
+    mkt: { Mon: { content: 2.5, meet: 2, camp: 2, research: 1 }, Tue: { content: 4, camp: 2.5, research: 1 }, Wed: { camp: 3, meet: 2, content: 1.5, learn: 1 }, Thu: { content: 3.5, camp: 1.5, research: 1.5, meet: 1 }, Fri: { content: 2, camp: 1, meet: 1.5, research: 1, learn: 2 } }
   };
   var daysEl = document.getElementById('week-days'), legEl = document.getElementById('week-legend');
   function h(x) { var m = Math.round(x * 60); return Math.floor(m / 60) + ':' + String(m % 60).padStart(2, '0'); }
